@@ -44,11 +44,3 @@ You complile and run this application:
    ```bash
    flutter run
    ```
-
-## Usage
-
-Once installed, you can use the notification panel to rotate your screen. Make sure you have root access enabled on your device.
-
-## Contributing
-
-Contributions are welcome! If you have suggestions or improvements, please fork the repository and submit a pull request.
