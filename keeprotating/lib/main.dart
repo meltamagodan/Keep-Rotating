@@ -57,29 +57,28 @@ class _MyAppState extends State<MyApp> {
         id: 1,
         channelKey: 'channelKey',
         title: 'Wanna Rotate?',
-        actionType: ActionType.KeepOnTop,
+        actionType: ActionType.SilentAction,
         category: NotificationCategory.Service,
         locked: true,
         autoDismissible: false,
+        showWhen: false,
+        backgroundColor: Colors.lightBlueAccent,
       ),
       actionButtons: [
         NotificationActionButton(
           key: '0',
           label: 'Portrait',
-          autoDismissible: false, // Keeps the notification
-          actionType: ActionType.KeepOnTop,
+          autoDismissible: false,
         ),
         NotificationActionButton(
           key: '1',
           label: 'Landscape',
           autoDismissible: false,
-          actionType: ActionType.KeepOnTop,
         ),
         NotificationActionButton(
           key: '2',
           label: 'RevLandscape',
           autoDismissible: false,
-          actionType: ActionType.KeepOnTop,
         ),
       ],
     );
