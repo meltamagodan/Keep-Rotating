@@ -3,7 +3,7 @@
 
 ## Description
 
-**Keep Rotating** is a Flutter application that leverages root access to allow screen rotation directly from the notification panel.
+**Keep Rotating** is a Flutter android application that leverages root access to allow screen rotation directly from the notification panel.
 
 - **Flutter version**: ```3.24.0```
 - **Root Method**: ```Magisk 27.0```
