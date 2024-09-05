@@ -2,12 +2,5 @@
 
 ## Description
 
-A root application to rotate your phone from notification panel.
-
-## Installation
-
-Instructions for installing and setting up your project.
-
-```bash
-git clone https://github.com/username/repository-name.git
-cd repository-name
+A flutter application that uses root access to rotate your phone screen from notification panel.
+Tested on my Samsung A50 Android 11.
