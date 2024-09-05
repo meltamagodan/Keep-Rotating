@@ -6,4 +6,4 @@ A flutter application that uses root access to rotate your phone screen from not
 
 Tested on my Samsung A50 Android 11.
 
-<img src="https://github.com/meltamagodan/Keep-Rotating/blob/main/show.gif" alt="Demo GIF" width="400">
+<img src="https://github.com/meltamagodan/Keep-Rotating/blob/main/show.gif" alt="Demo GIF" width="300">
