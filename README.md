@@ -3,7 +3,9 @@
 ## Description
 
 A flutter application that uses root access to rotate your phone screen from notification panel.
+
 Flutter version: 3.24.0
+
 
 Tested on my Samsung A50 Android 11.
 
