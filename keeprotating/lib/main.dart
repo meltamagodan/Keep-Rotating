@@ -9,13 +9,10 @@ import 'package:url_launcher/url_launcher.dart';
 void main() async {
   await AwesomeNotifications().initialize(null, [
     NotificationChannel(
-      channelGroupKey: 'group',
       channelKey: 'channelKey',
-      channelName: 'channelName',
-      channelDescription: 'channelDescription',
+      channelName: 'Service Notification',
+      channelDescription: 'Service Notification',
     )
-  ], channelGroups: [
-    NotificationChannelGroup(channelGroupKey: 'group', channelGroupName: 'channelGroupName')
   ]);
 
   runApp(const MaterialApp(home: MyApp()));
@@ -36,9 +33,6 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     AwesomeNotifications().setListeners(
       onActionReceivedMethod: NotificationController.onActionReceivedMethod,
-      onDismissActionReceivedMethod: NotificationController.onDismissActionReceivedMethod,
-      onNotificationCreatedMethod: NotificationController.onNotificationCreatedMethod,
-      onNotificationDisplayedMethod: NotificationController.onNotificationDisplayedMethod,
     );
     checkRoot();
   }
@@ -57,7 +51,7 @@ class _MyAppState extends State<MyApp> {
         id: 1,
         channelKey: 'channelKey',
         title: 'Wanna Rotate?',
-        actionType: ActionType.SilentAction,
+        actionType: ActionType.KeepOnTop,
         category: NotificationCategory.Service,
         locked: true,
         autoDismissible: false,
@@ -69,16 +63,19 @@ class _MyAppState extends State<MyApp> {
           key: '0',
           label: 'Portrait',
           autoDismissible: false,
+          actionType: ActionType.KeepOnTop,
         ),
         NotificationActionButton(
           key: '1',
           label: 'Landscape',
           autoDismissible: false,
+          actionType: ActionType.KeepOnTop,
         ),
         NotificationActionButton(
-          key: '2',
+          key: '3',
           label: 'RevLandscape',
           autoDismissible: false,
+          actionType: ActionType.KeepOnTop,
         ),
       ],
     );
@@ -111,7 +108,7 @@ class _MyAppState extends State<MyApp> {
                 _status ? "Granted!" : "Denied!",
                 style: TextStyle(
                   fontSize: 20.0,
-                  color: _status ? Colors.green : Colors.red,
+                  color: _status ? Colors.green : Colors.red,fontWeight: FontWeight.bold,
                 ),
               )
             ],
@@ -121,13 +118,14 @@ class _MyAppState extends State<MyApp> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blueAccent,
                 shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5),
             )),
             onPressed: () async {
               runService();
             },
-            child: const Text('Start Service'),
+            child: const Text('Start Service',style: TextStyle(color: Colors.white,fontWeight: FontWeight.w800,),),
           ),
           const SizedBox(
             height: 20.0,
@@ -139,6 +137,7 @@ class _MyAppState extends State<MyApp> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blueAccent,
         onPressed: () {
           showDialog(
             barrierColor: Colors.white.withOpacity(0.1),
@@ -168,20 +167,18 @@ class _MyAppState extends State<MyApp> {
                           height: 10,
                         ),
                         const Text(
-                          'Version: 1.0z',
+                          'Version: 1.0.1-z',
                           style: TextStyle(color: Colors.grey),
                         ),
                         Row(
                           children: [
                             const Text(
                               'Made by: ',
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Colors.grey),
                             ),
                             GestureDetector(
                               onTap: () async {
-                                if (!await launchUrl(Uri.http("github.com", "/meltamagodan/Keep-Rotating"))) {
-                                  Future.error("Couldn't open the link!");
-                                }
+                                await launchUrl(Uri.http("github.com", "/meltamagodan/Keep-Rotating"));
                               },
                               child: const Text(
                                 'NEON',
@@ -198,7 +195,7 @@ class _MyAppState extends State<MyApp> {
             },
           );
         },
-        child: const Icon(Icons.info_outline),
+        child: const Icon(Icons.info_outline,color: Colors.white,),
       ),
     );
   }
