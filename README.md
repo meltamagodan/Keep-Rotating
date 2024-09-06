@@ -26,7 +26,7 @@ You can download and install the app from release section.
 
 or
 
-You complile and run this application:
+Install flutter sdk then complile and run this application:
 
 1. Clone the repository:
    ```bash
